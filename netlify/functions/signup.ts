@@ -21,7 +21,6 @@ const handler: Handler = async (event: HandlerEvent, context: any) => {
     // Insert our data into the table columns
     await base('tblRVUk15quoGSOiU').create({
       Email: data.email,
-      Name: data.name,
     });
 
     return {

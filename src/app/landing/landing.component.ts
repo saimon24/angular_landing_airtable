@@ -12,7 +12,6 @@ export class LandingComponent implements OnInit {
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
     });
   }
@@ -24,8 +23,8 @@ export class LandingComponent implements OnInit {
     this.http
       .post(`${baseUrl}/.netlify/functions/signup`, this.form.value)
       .subscribe({
-        next: (res) => {
-          alert(res);
+        next: (res: any) => {
+          alert(res.message);
         },
         error: (err) => {
           alert('ERROR: ' + err.error);
