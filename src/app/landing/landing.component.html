@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input formControlName="name" placeholder="Simon Grimm" />
+  <input
+    formControlName="email"
+    type="email"
+    placeholder="saimon@devdactic.com"
+  />
+  <button type="submit">Submit</button>
+</form>
